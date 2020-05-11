@@ -1,0 +1,47 @@
+Data Structures are like compartment filers. Gives a way to organize your "drawer" of tools.
+- different data structures are good for different things
+
+ARRAYS-powerful for to-do lists and categorized things
+var listOfAnimals = ["tiger","cat","bear", "bird"];
+    console.log(listOfAnimals[1]);
+    -- in the console, "cat" will show up. Developers like counting from zero, so tiger(0), cat(1), bear(2), bird(3)
+        -this is call 'index' in arrays
+
+- more than just strings can go into an array- numbers, booleans and functions!
+    var functionlist = [function apples() {
+        console.log("apple");
+    }]
+-you can also mix your array too! BUT not reccommended lol
+- also can make an array within an array
+    var list = [
+        ["tiger","cat","bear", "bird"]
+    ];
+
+    to get "bear" you'd have to use: 
+        console.log(list [0][2]);
+
+-arrays are cool because JS has predefined methods for them... think of them as "functions" that are used on arrays
+
+    var listOfAnimals = ["tiger","cat","bear", "bird"];
+
+        your method: list.shift();
+        your return in the console: "tiger"
+        your new listOfAnimals: ["cat", "bear", "bird"]
+
+        list.pop();
+        "bird"
+        ["cat", "bear"]
+
+        list.push("elephant");
+        3
+        >["cat", "bear", "elephant"]
+
+        list.concat(["deer", "moose"]);
+        ["cat", "bear", "elephant", "deer", "moose"]
+            be careful with these, you have to define a new variable to retrieve this info again because if you ask JS for "list" you will just get: ["cat", "bear", "elephant"].
+            must do:
+                var newList = list.concat(["deer", "moose"]);
+
+Check out W3Cschool to look for and use new methods.
+
+            

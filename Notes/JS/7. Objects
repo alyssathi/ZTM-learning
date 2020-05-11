@@ -1,0 +1,80 @@
+- Objects are powerful data structures and are also a javascript type.
+- these are collections of properties.
+
+Great for user information!
+
+to write an object:
+    var user = {
+        name: "John",
+        age: 34,
+        hobby: "soccer",
+        isMarried: false,
+    }
+        our 'user' is our object. This is different than an array because you can define you 'index'. It is more dynamic in the way you can define properties and values.
+            property: value,
+
+How to grab information from objects?
+    user.name
+    user.age
+    user.hobby
+
+How do we add properties to objects like we did with arrays (like pop, shift...)?
+    user.favoriteFood = "spinach";
+        this will add the property favoriteFood: "spinach",
+    
+    can change properties like this as well!
+    user.isMarried = true;
+
+
+Using Arrays and Objects together...
+    say you have a game where the player controls a wizard. The player information would be great in an object but the spells could easily be put together in an array.
+        this means you could put an array in an object!
+            var Wizard = {
+                name: "Merlin",
+                age: 344,
+                favoritePotion: "Love Potion",
+                spells: ["abrakadabra", "leviOsa", "accio"]
+            };
+                    to access the leviOsa...
+                        user.spells[1];
+        but you can also put objects inside arrays
+            var Users = [
+                {
+                    username: "Potter",
+                    Password: "GinnyIsCute1"
+                },
+                {
+                    username: "Hermione",
+                    password: "smartestpersonever"
+                },
+                {
+                    username: "Malfoy",
+                    password: "mugglesSuck"
+                }
+            ];
+                    to access Hermione's password...
+                        Users[1].password;
+
+METHOD- a function inside of an object
+var Wizard = {
+                name: "Merlin",
+                age: 344,
+                favoritePotion: "Love Potion",
+                spells: ["abrakadabra", "leviOsa", "accio"]
+                shout: function() {
+                    console.log("ahhhhhh!");
+                }
+            };
+                    Can access by Wizard.shout();
+                    the function of shout is a method of the Wizard
+
+EMPTY VS NULL OBJECTS
+you can have empty arrays or objects
+    emptyArray=[]
+    var emptyObj={}
+        returns undefined
+can have null objects
+    var nullObj={}
+        returns null... means that there is nothing in the object
+
+            you can add names to empty objects but not to null.

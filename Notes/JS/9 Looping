@@ -1,0 +1,86 @@
+var toDo = [
+    "wake up",
+    "brush teeth",
+    "study JavaScript",
+    "practice CSS"
+];
+//we want to add an exclamation point to the end of each of our To Do's, but it can be a bit tedious to have to do that, especially after hundreds of lines. So how would we do that?
+
+//NEW SYNTAX!!! for is a kind of loop. i is a random variable that is commonly used in a for loop stands for 'index'. the semicolon after 0 means that is the end of the expression and that is the variable i assigned as the starting value. then it says, if i is less than the to do's length (4, since we have 4 to do's), then do i++. That means i + 1.
+//Basically this is saying that we want this to loop until we do not have anymore things to do.
+for (var i=0; i < toDo.length; i++) {
+    toDo[i] = toDo[i] + "!";
+}
+
+//say you want to pop your already finished items off... you'd try:
+    for (var i=0; i<toDo.length; i++) {
+        toDo.pop();
+    }
+//this would only do 3 items because as toDo length gets shorter and i gets larger it will meet in the middle so how do we solve this?
+    var toDoLength =toDo.length;
+    for (var i=0; i<toDoLength; i++) {
+        toDo.pop();
+    }
+//the variable will only run once, so it will set equal to 4 and stay that way. Then the loop will continue as normal until it finishes everything on the list
+
+//WHILE LOOP
+//starting value of counter is at 0 and as long as it is lower than 10, we add one.
+    var counterOne= 0;
+    while (counterOne<10) {
+        console.log(counterOne);
+        counterOne++;
+    }
+//can we do the opposite?
+var counterOne= 10;
+    while (counterOne > 0) {
+        console.log(counterOne);
+        counterOne--;
+    }
+//-- subtracts 1
+
+//DO-WHILE LOOP
+var counterTwo = 10;
+do {
+    console.log(counterTwo);
+    counterTwo--;
+} while (
+    counterTwo>0 
+)
+//We just do the same thing as the while loop, so what's the difference? in the while loop, we checked the condition first, in the do-while loop we did the necessary thing first and then checked the condition.
+
+//You will mostly be using the for loop... but there's a better way of doing it
+
+//forEACH- new in ECMAscript5
+
+//these do the same thing, kinda.
+    var toDoLength =toDo.length;
+        for (var i=0; i<toDoLength; i++) {
+            console.log(i);
+        }
+
+    toDo.forEach(function(i){
+        console.log(i)
+    })
+//forEach returns back the descriptors in the array.
+    // "wake up",
+    // "brush teeth",
+    // "study JavaScript",
+    // "practice CSS"
+//it asks for an arguement and wants to know what to do with it. The actions that we want to do ^^^^ can be represented in a function. so function(i) is the ^^^^
+//in the first we are accessing the index, to get the actions associated with the index in the array in the first we'd have to do:
+    var toDoLength =toDo.length;
+    for (var i=0; i<toDoLength; i++) {
+        console.log(toDo[i]);
+    }
+
+//in the forEach, how do you access the index?
+    toDo.forEach(function(toDo,i){
+        console.log(toDo,i)
+    })
+//forEach can have a second parameter looking at the index. forEach, is much more user friendly and you can actually understand what you are doing. 
+//the fact that it is a function is is so powerful. you can denote it like this: 
+    function logToDo(toDo,i){
+        console.log(toDo,i);
+    }
+    toDo.forEach(logToDo);
+//this will do the same thing except the function is named and you can use the function elsewhere as well.

@@ -1,0 +1,35 @@
+Javascript Keywords that have a predefined meaning in JS (so can't define them as a variable or give new meaning)
+
+- break
+- case
+- catch
+- class
+- const
+- continue
+- debugger
+- default
+- delete
+- do
+- else
+- export
+- extends
+- finally
+- for
+- function
+- if
+- import
+- in
+- instanceof
+- new
+- return
+- super
+- switch
+- this
+- throw
+- try
+- typeof
+- var
+- void
+- while
+- with
+- yield

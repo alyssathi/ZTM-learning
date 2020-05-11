@@ -1,0 +1,41 @@
+//Building simple Facebook
+
+//we can have multiple people using it so we will have an array of objects
+var database = [
+    {
+        username: "iLoveGoats",
+        password: "goatlover"
+    }
+];
+
+var newsfeed = [
+    {
+        username: "Greta",
+        timeline: "Time we step up for Mother Earth!" 
+    },
+    {
+        username: "RBG",
+        timeline: "Fighting for fairness for all."
+    },
+    {
+        username: "Goddall",
+        timeline: "Every person and animal on this earth is worth something!"
+    }
+];
+
+//sign in
+var userNamePrompt = prompt("what's your username?");
+var passwordPrompt = prompt("what's your password?");
+
+//verification of the sign-in
+
+function verify(user, pass) {
+    if(database[0].username === user && database[0].password === pass) {
+        alert(console.log(newsfeed));
+    } else {
+        alert("incorrect.");
+    }
+};
+
+//we are calling the verify function that can hold two parameters and defining those as the prompt answers. This then looks if the username and password matches the database.
+verify(userNamePrompt, passwordPrompt);

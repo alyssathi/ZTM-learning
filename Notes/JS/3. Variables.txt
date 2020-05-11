@@ -1,0 +1,31 @@
+VARIABLES: can hold numbers, boolean or string
+
+Instead of writing "These pretzels make me thirsty" + "!" a bunch of times, you can set it equal to variables.
+
+    var p = "These pretzels make me thirsty" + "!"; [enter]
+    >>undefined
+
+    p
+    "These pretzels make me thirsty!"
+
+Rule: you can't start variables with numbers or symbols (other than _ or $), must start with a letter.
+
+JS standard: camelCase... 
+    example: var firstname NO
+             var firstName YES
+
+So why do we need to store variables?
+ex. Prompt
+
+In the console: 
+prompt("what is your username?") ......this will make a prompt in the browser, with a reply option.
+The reply will be the output.
+
+    Creating a calculator with prompts and alerts.
+
+        var first = prompt("enter first number");
+        var second = prompt("enter second number");
+        var sum = Number(first) + Number(second); ......[this changes the string response to a number!]
+        alert("The sum is: " + sum);
+
+    why do we need a semicolon? It means that it is the end of an expression.

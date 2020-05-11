@@ -1,0 +1,32 @@
+JS TYPES
+1. Numbers- in the console you can do simple math, its valid!
+    - 12%5 (modulo)- gives you the remainder
+
+2. String- just text! "this is a string, notice the double quotes" (also can you 'single quotes')
+
+    "Hello " + "there!" = "Hello there!"
+    but what about: 'this isn't nice'.... will stop at the apostrophe in "isn't", you can use this: 'this isn/'t nice', the backslash means the thing that comes directly after should be ignored.
+
+    10 + "34" = 1034 --- JS assumes that you're trying to add strings together, just a quirk of JS. BUT...
+    10 - "3" = 7 --- you can't really substract strings, so it will assume you mean the number. IDEALLY you wouldnt do anything like this.
+
+    if you get NaN means "Not a Number", can't do this: "hello" - "bye" = NaN
+
+3. Boolean- True or False
+    3>2 = True
+    10<5 = False
+    5>=5 = True
+    3=3 INVALID, why? wrong syntax: must be 3===3 = True
+    3!==3 False... this is saying 3 DOES NOT equal 3
+
+    these are JS Comparisons
+        !==
+        ===
+        >=
+        <=
+        >
+        <
+
+4. Undefined- mean the variable has not been assigned.
+    ex. var password;
+        undefined, you must enter a password.

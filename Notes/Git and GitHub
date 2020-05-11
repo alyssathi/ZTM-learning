@@ -1,0 +1,30 @@
+Command line:
+- cd> change directories: cd Programs
+- touch> makes a new blank file in the directory you are in: touch github.txt
+- ls> gives you a list of files/folders within the directory you are in.
+- mkdir Name-of-Directory> makes a new folder: mkdir HiThere
+
+Git: https://www.notion.so/Introduction-to-Git-ac396a0697704709a12b6a0e545db049 
+- git init: will initialize git, must be in the main file of your new project
+- git status: will show you where you are and what has been changed or needs to be commited
+- git add: you can individually tell the command line which files you want to add to stage or you can you "git add ." to add all files
+- git commit -m "your message": will commit the changes to the log with your message detailing what you have done in that commit.
+- git log: will show you your history of previous commits
+- git checkout <commit hash>: in your log there will be a long code that you will copy and paste instead of <commit hash> and it will return to that state (even in your editor!)
+- git checkout master: will bring you back your latest version.
+- git branch <name of branch>: will create a new branch with a name.
+- git checkout <branch name>: will change to that branch
+    - git checkout -b <name of branch> will create and change to that branch
+- git merge <branch-name>: to use when you want to implement the experimental branch into the main code. 
+- git branch -d <branch name>: will delete said branch.
+
+GitHub https://www.notion.so/Introduction-to-GitHub-202af6f64bbd4299b15f238dcd09d2a7
+- after going through all of the git to save it to your local repository ^^^^^^^^^see above Git^^^^^^^^^ you can go to GitHub and make a new repository.
+- name it and you do not have to check initialize this repo with README
+- create repository
+- since you've already made a local git repo on your own drive, you can push an existing repo from the command line
+    - git remote add origin "https://github.com/you_will_copy_&_paste_this_from_the_site/repoName.git
+        - you only have to do this once per project to connect your local repo to the GitHub remote repo.
+    -git push -u origin master
+
+-when you make changes to your file and go through git add and git commit on the command line you will then have to git push to add it to GitHub.

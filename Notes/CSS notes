@@ -1,0 +1,53 @@
+    paletton.com give you complementary colors and a palette
+    cursor: pointer; --can change pointer when it hovers!
+    list-style: none;-- dots on list go away!
+    display: inline-block; -- can make lists become horizontal!
+
+ORDER OF CASCADE ELEMENTS 45 "CSS Selectors"
+.class
+#id
+* ----- all elements
+element
+element, element --- individual elements
+element1 element2 --- select all element 2s NESTED inside element 1s! (doesnt matter if element1 is not the direct parent)
+element1 > element2 --- select all e2s that have a parent of e1 (e1 MUST be the direct parent of e2)
+element1 + element2 --- select all e2s that are directly AFTER e1
+:hover --- psuedoclass
+:last-child
+:nth-child()
+:first-child
+!important --- will overrides all ccs rules NOT RECOMMENDED 
+
+What selectors win out in the cascade depends on:
+-specificity
+-importance
+-source order-second style sheet linked in HTML will show through
+
+TEXT AND FONT
+line-decoration: underline, line-through;
+text-transform: uppercase, lowercase;
+line-height: 20px, -----between lines of text;
+font-style: italics;
+font-weight: bold;
+font-size: 10px or 100%;
+font-family: "Times New Roman" (has to be in quotes since it is multiple words),    Georgia (does not since it is one word); --- comma to seperate, georgia is the secondary font if computer cannot recognize the first
+
+    can use google fonts and add to "library" then copy the embedded link <link href="htpps://fonts.googleapis.com/css?family=...." rel="stylesheet"> into the <head> of the html file. Then in the CSS file, it will give you the in-line command to retrieve that font. 
+
+IMAGES- 48 "Images in CSS"
+- you can use floats to wrap text around an image... but there are better ways (which will be learned later on). it's good to know that it was use in that way. be sure to use clear:both; on the element after you dont want float to be active!
+
+49 "Box Models"
+Margin | Border | Padding| content | Padding | Border | Margin
+can use display: inline-block to get all boxes to be horizontal.
+-width and height change the content size!
+
+50 px vs em vs rem
+-if you have a <p> tag stylized with a text size of 10px, and within that element you have a <span> tag and stylize it with 4em, your text size with be equal to 40px! What you're telling <span> is that the text size is 4 * the text size of the containing element!
+-rem is a size in relation to the root element... HTML ????????@@@@still confused@@@@??????
+
+52 Critical render path
+-CSS is a render blocking file, meaning the website might not load until the CSS can be read. 
+- One thing that can be done is to make sure the CSS file isnt too big
+
+Minifying CSS file- just google it to do it. It takes away all unecessary white space

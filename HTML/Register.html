@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Welcome to Alyssa</h2>
+    <form method="GET">
+        First name: <input type="text" name="firstname"> <br> 
+        Last Name: <input type="text" name="lastname"> <br>
+        E-mail: <input type="email" name="email" required><br>
+        Password: <input type="password" name="password" minlength="8"> <br>
+        Birthday: <input type="date" name="birthday" required> <br>
+        Gender: <input type="radio" name="Gender" value="Male">Male <input type="radio" name="Gender" value="Female">Female <input type="radio" name="Gender" value="no answer">Prefer not to answer <br>
+        Pets: <br>
+        <input name="cat" type="checkbox">Cats <br>
+        <input name="dog" type="checkbox">Dogs <br>
+        Cars: <br>
+            <select name="cars" multiple>
+                <option value="Honda">Honda</option>
+                <option value="Audi">Audi</option>
+            </select> <br>
+        <input type="submit" value="Register"> <input type="reset">
+    </form>
+    
+</body>
+</html>

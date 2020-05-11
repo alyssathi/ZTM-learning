@@ -1,0 +1,59 @@
+JAVASCRIPT CONDITIONALS
+- if 
+    ex. var name = "Billy";
+        if (name === "Billy") {
+            alert ("hi, Billy!");
+        }  
+
+- if else
+    ex. if (name==="billy"){
+        alert("hi billy!");
+    }
+        else {
+            alert ("Who are you?");
+        }
+
+- else if statement
+   ex.  if (name === "Billy") {
+        alert("Hi, Billy!");
+    } else if (name === "Susy") {
+        alert("Hi, Susy!");
+    } else {
+        alert("Who are you?");}
+
+
+
+JAVASCRIPT LOGICAL OPERATORS
+
+|| means "or"
+    ex. if (name === "Billy" || name === "Ann") {
+        alert("Hi, Billy or Ann!");
+    }
+
+&& means "and"
+    ex. 
+        var firstName = "Bob";
+        var lastName = "Smith";
+        if (firstName === "Bob" && lastName === "Smith") {
+            alert("Hello, Bob Smith");
+        } else {
+            alert("Who are you");
+        }
+
+                    Putting it all together:
+
+                    if (firstName === "Joe" && lastName === "Smith") {
+                        alert("Hello, Joe Smith");
+                    } else if (firstName === "Brendan" && lastName === "Duke") { alert      
+                        ("Hello, Loser!")} 
+                    else {
+                        var input = prompt("What is your name?");
+                        alert ("Hello, " + input + "!");
+                    }
+! means "false"
+    ex.
+    var name = "Billy";
+    if (!(name === "Bob")) {
+        alert("Hi, Bob!");
+    }
+>>>>>>>so if name is not bob, it will say "Hi, Bob!"

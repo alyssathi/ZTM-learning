@@ -1,0 +1,5 @@
+- The "verb" of the internet, allows us to do actions
+- can do more than just the web! instagram uses it, virtual reality uses it, robotics...
+- Backend: Node.js will be easy to pick up, it uses the same language
+- What is JS really? it is a file that you can write instructions for a computer.
+- even big things like, world of warcraft, its built one line at a time

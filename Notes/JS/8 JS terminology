@@ -1,0 +1,39 @@
+function declaration
+    function newFunction () {
+
+    }
+
+function expression
+    var newfunction = function() {
+
+    };
+        ***notice how function expressions end in semicolon, this is an anonymous function!
+
+expressions- denotes a value...
+    1+3;
+    var a = 2;
+    return true;
+
+Calling or Invoking a function
+    alert();
+    newFunction (param1, param2);
+    
+Assign a variable
+var a = true;
+
+Function vs Method
+function: 
+    thisIsAFunction(){
+
+}
+
+Method: 
+    var object = {
+    thisIsAMethod{
+
+    }
+}
+
+    you have to call these differently
+    function: thisIsAFunction();
+    Method: object.thisIsAMethod();

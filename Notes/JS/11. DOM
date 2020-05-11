@@ -1,0 +1,21 @@
+Document Object Model
+- allows us to alter the document's HTML and CSS in the webpage using javascript
+    can use:
+        document.write("Hello");
+    to change the website. javascript can talk to the DOM through this document object because ultimately the document is just an object
+
+With DOM you can:
+- change all the HTML elements in the page
+- change all HTML attributes in the page
+- change all the CSS style in the page 
+- remove existing HTML elements and attributes
+- add new HTML elements and attributes
+- JS can react to all existing HTML events in the page
+- JS can create new HTML events in the page
+
+The document object has a parent object: window. this object is the big parent to so many things.
+    the reason why alert("Check"); works is because it assumes what you are referring to is the big parent. What youre really doing is:
+        window.alert("Check");
+
+RECAP:
+the browser has a window object that has a property of document that specifies what gets displayed. In order to decide what gets displayed, the document object and DOM read the HTML and CSS, then JS is read by a JS engine (provided by the browser- in chrome it is the V8 engine), reads through it. If it ever needs to change something, JS will speak with DOM and modify the HTML and CSS

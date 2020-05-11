@@ -1,0 +1,24 @@
+* {
+    text-align: right;
+    color: white;
+}
+body {
+    background: url(/Zero\ to\ Mastery/Images/IMG_5355.jpg);
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1, p, h3, li {
+    text-align: center;
+}
+.floatleft {
+    float: left;
+}
+li{
+    list-style: none;
+}
+
+footer{
+    clear: both;
+    text-align: center;
+}
+
