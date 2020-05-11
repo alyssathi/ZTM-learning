@@ -1,0 +1,31 @@
+Selectors allow us to play around with the DOM
+
+- document.getElementsByTagName("");
+    document.getElementsByTagName("h1");
+- document.getElementsByClassName("");
+    **in order to actually access the line you want, you'll have to put the index of the array in.
+        document.getElementsByClassName("class")[0];
+- document.getElementById("");
+    **notice that element is not plural, because you can only 1 ID.
+
+- document.querySelector("");
+    **allows us to anything in the document.
+        document.querySelector("li");
+            - this will return our first list item that it finds....
+- document.querySelectorAll("");
+    **this will allow us to find all of the specified items!
+        document.querySelectorAll("li");
+            - will return an array, will access by utilizing index
+    can also use commas:
+        document.querySelectorAll(h1, li);
+
+- document.getAttribute... has to go with something else
+    document.querySelector("li").getAttribute("randomAttributeLikeIMG");
+- document.querySelector("li").setAttribute("randomAttributeLikeIMG", "whatYouWantToSetItTo")
+    **this allows you to change classes, tags, really anything
+
+Changing Style
+- document.querySelector("h1").style.background = "yellow";
+    **Issue: seperation of concerns. You ideally don't want to include styles because it alters the HTML file, not the CSS file. So whats a better way to change style?
+- In CSS you have a class of coolTitle
+    document.querySelector("h1").className="coolTitle";
