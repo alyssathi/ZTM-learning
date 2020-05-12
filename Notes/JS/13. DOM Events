@@ -1,0 +1,17 @@
+Video 130
+- Use Events to listen to what the user does and react accordingly
+- Events: clicking, mouse entering, hovering or user trying to search something in the search bar
+- there are lists of events that the browser allows us to listen for
+    - the most common are mouse events and keyboard events
+    - https://developer.mozilla.org/en-US/docs/Web/Events 
+-keycodes: https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+
+How to listen for an event(we'll use clicking a button in this example)
+FIRST SET YOUR VARIABLE
+    var button = document.getElementsByTagName("button")[0];
+
+        button.addEventListener("parameter1: event listening for", "parameter2: action you want to take");
+
+    button.addEventListener("click", function() {
+        console.log("CLICKKKK");
+    });

@@ -29,3 +29,33 @@ Changing Style
     **Issue: seperation of concerns. You ideally don't want to include styles because it alters the HTML file, not the CSS file. So whats a better way to change style?
 - In CSS you have a class of coolTitle
     document.querySelector("h1").className="coolTitle";
+        here you are adding a class of coolTitle to the h1 through JS.
+- you can see an elements classes by using: classList
+    document.querySelector("li").classList
+        -Within this classList selector, you can do different things, such as add, remove or toggle
+            document.querySelector("li").classList.add("coolTitle");
+            document.querySelector("li").classList.remove("coolTitle");
+            document.querySelector("li").classList.toggle("coolTitle");
+                this last one will toggle the effects on and off instead of having to add and remove
+
+- innerHTML
+    document.querySelector("h1").innerHTML = "<strong>My h1!!!!</strong>
+        this will change the h1 to contain "My h1!!!!"
+
+- You can choose parent and child elements as well
+    document.querySelectorAll("li")[1].parentElement;
+        ~~~~~will return <ul></ul>~~~~~~~~
+    document.querySelectorAll("li")[1].parentElement.parentElement;
+        ~~~~~~will return <body></body>~~~~~~
+    document.querySelectorAll("li")[1].parentElement.parentElement.children;
+        ~~~~~~will return all of the child elements of the body~~~~~~~
+
+*******IT IS IMPORTANT TO CACHE SELECTORS IN VARIABLES*******
+instead of using memory by constantly going: 
+    document.querySelector("li")
+    document.querySelector("li")
+    document.querySelector("li")
+    document.querySelector("li")......
+it's easier to set a variable:
+    var li = document.querySelector("li");
+if you do this, the browser wont have to go to the DOM and query select the first list item. it has it stored as a variable already
