@@ -38,6 +38,7 @@ button {
     border-radius: 2em;
     transition: 1s;
     color: rgb(168, 109, 49);
+    margin-left: 1em;
 }
 
 button:hover {
@@ -51,4 +52,14 @@ button:hover {
     justify-content: center;
     font-size: large;
     color: peru;
+}
+
+li:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+    text-decoration-color: peru;
 }

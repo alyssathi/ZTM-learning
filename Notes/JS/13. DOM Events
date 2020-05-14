@@ -1,17 +1,115 @@
-Video 130
-- Use Events to listen to what the user does and react accordingly
-- Events: clicking, mouse entering, hovering or user trying to search something in the search bar
-- there are lists of events that the browser allows us to listen for
-    - the most common are mouse events and keyboard events
-    - https://developer.mozilla.org/en-US/docs/Web/Events 
--keycodes: https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+// Video 130
+// - Use Events to listen to what the user does and react accordingly
+// - Events: clicking, mouse entering, hovering or user trying to search something in the search bar
+// - there are lists of events that the browser allows us to listen for
+//     - the most common are mouse events and keyboard events
+//     - https://developer.mozilla.org/en-US/docs/Web/Events 
+// -keycodes: https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
 
-How to listen for an event(we'll use clicking a button in this example)
-FIRST SET YOUR VARIABLE
-    var button = document.getElementsByTagName("button")[0];
+// How to listen for an event(we'll use clicking a button in this example)
+// FIRST SET YOUR VARIABLE
+//     var button = document.getElementsByTagName("button")[0];
 
-        button.addEventListener("parameter1: event listening for", "parameter2: action you want to take");
+//         button.addEventListener("parameter1: event listening for", "parameter2: action you want to take");
 
-    button.addEventListener("click", function() {
-        console.log("CLICKKKK");
-    });
+//     button.addEventListener("click", function() {
+//         console.log("CLICKKKK");
+//     });
+
+
+
+//NOTEPAD APP!!!!!!
+
+
+
+//JAVASCRIPT
+var button = document.getElementById("addMe");
+var userInput = document.getElementById("userInput");
+var ul = document.querySelector("ul");
+
+// button.addEventListener("click", function(){
+//     if (userInput.value.length > 0) {
+//     var li = document.createElement("li");
+//     li.appendChild(document.createTextNode(userInput.value));
+//     ul.appendChild(li);
+//     userInput.value = "";
+//     }
+// })
+
+//createElement will create the element in quotes but in order to actually display text within it, you have to use createTextNode. Even here, you will not see the display because it isn't attached to anything. That is why we attach the li to the ul.
+
+//the if element tells us to only run the code if there is something typed.
+//the userInput.value set equal to an empty string is so that there isn't anything in the input after being clicked.
+
+// userInput.addEventListener("keypress", function(event){
+//     if (userInput.value.length > 0 && event.which === 13) {
+//     var li = document.createElement("li");
+//     li.appendChild(document.createTextNode(userInput.value));
+//     ul.appendChild(li);
+//     userInput.value = "";
+//     }
+// })
+
+//this looks for the '13' key (enter) to be pressed while in the userInput field and will add it to the list. check out https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes to look at more keycodes.
+
+//one issue here: there is a lot of repeating code. How do we clean it up? Look at the repeating code and set it to a function!
+
+//minor change
+function inputLength() {
+    return userInput.value.length;
+}
+
+//big change
+function createListElement () {
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(userInput.value));
+    ul.appendChild(li);
+    userInput.value = "";
+    }
+
+function addAfterClick() {
+    if (inputLength() > 0) {
+        createListElement();
+    }
+}
+function addAfterEnter (event) {
+    if (inputLength() > 0 && event.which === 13){
+        createListElement();
+    }
+}
+
+//look how clean!
+button.addEventListener("click", addAfterClick);
+
+userInput.addEventListener("keypress", addAfterEnter);
+
+
+//HTML
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Notepad</title>
+//     <link rel="stylesheet" href="Notepad-style.css">
+// </head>
+// <body>
+// <h1>Notes, To-Dos and More!</h1>
+
+// <div class="noteMaker">
+// <input id="userInput" type="text" placeholder="Make some notes!">
+// <button id= "addMe">Add me!</button>
+// </div>
+
+// <div class="myList">
+//     <ul>
+//         <li>Hi there</li>
+//         <li>This</li>
+//         <li>Is</li>
+//         <li>My List!</li>
+//     </ul>
+// </div>
+
+// <script type="text/JavaScript" src="/Zero to Mastery/VanillaJS Notepad/Notepad-script.js"></script>
+// </body>
+// </html>
