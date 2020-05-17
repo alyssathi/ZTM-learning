@@ -10,6 +10,8 @@ function colorInput () {
     + ", " 
     + color2.value
     + ")";
+
+    css.textContent = body.style.background + ";";
 }
 
 color1.addEventListener("input", colorInput);
@@ -17,3 +19,7 @@ color1.addEventListener("input", colorInput);
 color2.addEventListener("input", colorInput);
 
 //you can select an input event by "input"
+
+function getRandomColor() {
+    
+}
