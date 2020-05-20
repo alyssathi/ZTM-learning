@@ -40,4 +40,4 @@ randomButton.addEventListener("click", setRandomColor);
       }
       
 //Window will have textContent onload
-window.addEventListener(document.onload, setRandomColor());
+window.addEventListener("load", setRandomColor);
