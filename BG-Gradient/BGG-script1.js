@@ -14,9 +14,25 @@ function changeColor(){
     css.innerHTML = body.style.background + ";";
 }
 
-css.onload = function cssOnload(){
-    css.innerHTML = body.style.background + ";";
-}
-
 color1.addEventListener("input", changeColor);
 color2.addEventListener("input", changeColor);
+
+function getRandomColor() {
+    let hexCode = "#" 
+
+    while ( hexCode.length < 7 ) {
+      hexCode += (Math.floor(Math.random() * 15)).toString(16) 
+    }
+
+    return hexCode;
+}
+
+function setRandomColor(){
+    color1.value = getRandomColor(); 
+    color2.value = getRandomColor();
+    changeColor();
+}
+
+randomButton.addEventListener("click", setRandomColor);
+
+window.addEventListener("load", setRandomColor);
