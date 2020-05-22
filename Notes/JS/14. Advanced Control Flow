@@ -70,8 +70,8 @@ function xpPoints() {
     }
 }
 
-winBattle(boolean){
+function winBattle(boolean){
     return boolean;
 }
 
-var xpPoints = winBattle() ? 10 : 1;
+var xpPoints = winBattle(true) ? 10 : 1;

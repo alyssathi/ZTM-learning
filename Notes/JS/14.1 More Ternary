@@ -1,4 +1,8 @@
+https://www.youtube.com/watch?v=s4sB1hm73tw
+
 condition ? expression1 : expression2;
+
+you have the condition and the first expression will return if the statement is true, the exp2 will return if the statement is false
 
 if statement example:
 var age = 19;
@@ -12,6 +16,12 @@ ternary operator:
 var age = 19;
 (age >=18) ? console.log("you are an adult") : console.log("you are a child");
 
-function whatAmI(){
-(age >=18) ? console.log("you are an adult") : console.log("you are a child");
-}
+console.log((age>=18) ? "you are an adult" : "you are a child");
+
+you can have ternary operators inside ternary operators-
+
+var firstCheck = false,
+    secondCheck = false,
+    access = firstCheck ? "access denied" : secondCheck ? "access denied" : "access granted";
+
+console.log(access);
