@@ -1,0 +1,77 @@
+More JS CONDTIONALS
+- we've learned the if, else and else if statements, but we havent learned about two other conditionals
+- these will not introduce anything new, they are just two more ways to do control flow. They wont do that a simple if else statement cant do, but there will be times that these options are much more useful than if else. 
+
+TERNARY OPERATOR
+this says: here is a condition, if it is true return expression1, or if it is not true, return expression2.
+condition ? expression1 : expression2;
+
+ex. 
+function isUserValid(boolean) {
+    return boolean;
+}
+var answer = isUserValid(true) ? "you may enter" : "access denied";
+
+//here it will return true so it will say "you may enter"
+
+This is not different from an if else statement:
+function condition(){
+if(isUserValid(true) {
+    return "you may enter"
+} else {
+    return "access denied"
+});
+}
+var answer2= condition();
+
+BUT how much easier is the ternary operator?
+The ternary operator is good for use when theres a check for a condition and then 2 possible outcomes
+
+
+SWITCH STATEMENTS
+
+example by a small game:
+
+function moveCommand(direction) {
+    var whatHappens;
+    switch (direction){
+        case "forward":
+            whatHappens = "you encounter a monster";
+            break;
+        case "back":
+            whatHappens = "you go home";
+            break;
+        case "right":
+            whatHappens = "you run into a river";
+            break;
+        case "left":
+            whatHappens = "you found a troll";
+            break;
+        default:
+            whatHappens = "please enter a valid direction";
+    }
+    return whatHappens;
+}
+
+//what is happening here^^?????
+//we have a move function (moveCommand) that will take a directional parameter. But we have multiple directions the player can go in. The switch conditional allows for multiple definitions of our directional command. in the "case" of forward, whatHappens is equal to "you encounter a monster" and it will return that value because the code matches the direction and it sees "break". It will then leave the switch statement and return the value of whatHappens. In the case that the user command doesnt match anything, it will return the default.
+
+
+
+
+ADVANCED CONTROL FLOW EXERCISE:
+turn this if else statement into a ternary:
+
+function xpPoints() {
+    if (winBattle()) {
+        return 10;
+    } else {
+        return 1;
+    }
+}
+
+winBattle(boolean){
+    return boolean;
+}
+
+var xpPoints = winBattle() ? 10 : 1;

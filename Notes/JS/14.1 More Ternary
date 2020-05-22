@@ -1,0 +1,17 @@
+condition ? expression1 : expression2;
+
+if statement example:
+var age = 19;
+if (age >= 18) {
+    console.log("you are an adult!");
+} else {
+    console.log("you are a child!");
+};
+
+ternary operator:
+var age = 19;
+(age >=18) ? console.log("you are an adult") : console.log("you are a child");
+
+function whatAmI(){
+(age >=18) ? console.log("you are an adult") : console.log("you are a child");
+}
