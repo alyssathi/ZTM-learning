@@ -1,0 +1,87 @@
+const first = () => {
+    const greet = 'hi';
+    const second = () => {
+        alert(greet);
+    }
+    return second;
+}
+
+const newFunc = first();
+newFunc();
+
+The way that we are defining our const ~within~ our function is good in a real world sense. It makes sure that if another person (or multiple people) is also creating code, we will not run into an issue with naming and renaming functions/variables. We can treat our own little function as its own universe and use whatever keywords we like. Whatever happens in that universe only matters within it.
+
+//ClOSURES
+- the above function runs and the function is executed... now it is never going to execute again. Kind of like the first() function- it is run and executed, but the results are put into newFunc. It is going to remember that there are references to that variable alive in a memory first. 
+- BUT THERES AN ISSUE! when we load up the program on the site, the JS engine will see it and say "we have a constant: first and it is a function. Then it'll see we created a new const (newFunc) and we want to assign it to the results of first(). SO the program runs 'first()' and sees we want to create a constant of 'greet='hi'' and then we also want another function: second. When we run first() we really are only getting back:
+
+                const second = () => {
+                    alert(greet);
+                }
+                return second;
+
+But here, the second() function needs to remember what happens in first(). So in reality this is what is happening
+
+                const newFunc = const second = () => {
+                    alert(greet);
+                }
+But the second() function needs to know what greet is right?
+
+What closure does, it says that the child scope always has access to the parent scope. 
+
+*** A function ran, the function executed, and it will never be executed again, but what it is going to remmeber that there are references to those variables so the child scope always has access to the parent scope. ***
+
+
+CURRYING- the process of converting a fun that takes multiple arguements  into a function that tkes them one at a time.
+
+    const multiply = (a,b) => a * b;
+
+so currying means that we are changing this function to take only one parameter at a time.
+
+    const curriedMultiply = (a) => (b) => a * b;
+
+        think of the arrows as functions... so if you do:
+            curriedMultiply(3); 
+
+    you will get back: 
+            (b) => a * b;
+
+        this is saying that a is 3, but needs another parameter for the function inside of the function (i.e. 'b')
+    
+    in order to make it work you have to do:
+        curriedMultiply(3)(4);
+
+Why would we even need to do this????
+    Because now it is more extensible. We can do something like this   
+        multiplyBy5 = curriedMultiply(5);
+    Now we can use multiplyBy5(10) to get 50! and so on and so forth.
+
+
+COMPOSE- the act of putting two functions together to form a third function where the output of one function is the input of the other.
+
+    const compose = (f, g) => (a) => f(g(a));
+
+it looks like f is a function and g is also a function.
+
+Example:
+
+    const compose = (f, g) => (a) => f(g(a));
+    const sum = (num) => num + 1;
+    compose(sum, sum)(5);
+    //output: 7
+
+What the heck is happening?
+    basically go from the inside out. So we know our values for this example:
+        f = sum (which = num + 1)
+        g = sum (which = num + 1)
+        a = 5
+    so f(g(a)) = num(num(5)), and start from the inside, 5+1 = 6; so now:
+    num(6) is = 6 +1 = 7!
+
+THE MOST IMPORTANT THINGS YOU CAN DO AS A WEB DEVELOPER
+- avoiding side effects
+    any actions that happen inside of the function that we dont know about... like if it read and writes to an outside variable, that is a side effet
+- functional purity
+    a concept that says to write good code, we want to avoid side effects and we always want a return of a value.
+
+By doing this we create something that is called Deterministic. It means that, no matter what, if my inputs go through a function, the return value will always be the same
