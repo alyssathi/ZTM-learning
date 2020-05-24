@@ -1,0 +1,141 @@
+lecture 143;
+
+- web development is getting updated through HTML, CSS and JS. Libraries are breing created to be used by others and constantly improving.
+
+ECMAScript === Javascript, it is just the standard way of calling it
+
+Babel: a JS compiler. It allows us to use the latest version of ECMAScript without having to wait for browsers to fully support it. It takes your latest ES code and turns it into something that all browsers can read
+
+Useful features of ES6
+
+//let and const
+
+    const player = "bobby";
+    let xp = 100;
+    let level = false;
+
+    if (xp = 90) {
+        let level= true;
+    }
+
+if you run this in your console, level will return false... but if it was a var, it would have returned true.
+
+- with var, we were only able to create a scope inside of a function but not inside of an "if" statement.
+- so with let, we can create new scopes in functions AND if statements.
+
+Const variables are pretty simple, they can't change without an error. THese variables cannot be reassigned.
+    Why is this useful?
+        A lot of bugs happen when you are working in a team. If someone changes your variable, or uses and reassigns a variable and you keep getting errors, its tough to have to go back and look through all the code and see where the bug is. With const, you make sure that your variable will always have the same value.
+    a note on const variables, if you have a 
+        const obj = {
+            player: 'bobby',
+            xp: 100,
+            level: false
+        };
+    you can change player inside of the object but not the obj itself.
+
+
+DESTRUCTURING
+
+const obj = {
+    player: 'bobby',
+    xp: 100,
+    level: false
+        };
+
+
+        const player = obj.player;
+        const xp = obj.xp;
+        let level = obj.level;
+
+^^^ this was a lot of effort to access these variables.
+we can do this:
+        const {player, xp} = obj;
+this does the exact same thing as the first two lines.
+
+
+OBJECT PROPERTIES
+
+    const name = 'john snow';
+
+    const obj = {
+        [name]: 'hello',
+        ['ray' + 'smith']: 'hey there'
+    }
+
+this will return:
+{john snow: "hello", raysmith: "hey there"}
+when it you call back obj.
+
+Old JS Syntax:
+    let dog = "woof";
+    let cat = "meow";
+    let cow = "moo";
+
+    const animals = {
+        dog: dog,
+        cat: cat,
+        cow: cow
+    };
+
+New syntax:
+    let dog = "woof";
+    let cat = "meow";
+    let cow = "moo";
+
+    const animals = {
+        dog,
+        cat,
+        cow
+    }
+
+    console.log(animals);
+
+This is useful when you want the property to match the value. it is a shorthand way to get to the same place as the older syntax without having to use a declaration (i.e dog: dog)
+
+In ES6 we can have dynamic property values.
+
+
+
+TEMPLATE STRINGS
+instead of doing:
+
+name = "sally";
+age = 34;
+pet = "dog"
+
+    const greeting = "hello " + name + ", you seem to be " + age + "!" + " What a lovely " + pet + "!";
+
+we can have:
+    const greetingBest = `Hello, ${name}, you seem to be ${age-10}. what a lovely ${pet}!`
+
+Look at how easy that is!
+
+
+DEFAULT ARGUEMENTS
+
+function greet(name = '', age = 30, pet = 'cat') {
+    return `Hello ${name}, you seem to be ${age-10}. what a lovely ${pet} you have!`
+}
+
+nothing has really changed other than we put the syntax into a function and after those functions, in the paramenters we have a default. So if nothing is given, the default would return: 
+    Hello, you seem to be 20. what a lovely cat you have!
+but if you do define your parameters by:
+    greet("Alyssa", 32, "dog");
+you will get back:
+    Hello Alyssa, you seem to be 22. what a lovely dog you have!
+
+ARROW FUNCTIONS
+
+function add(a, b) {
+    return a + b;
+}
+
+is the same as this shorthand:
+
+const add = (a, b) => a + b
+
+This is used when you have one return, because the arrow lets you return the syntax without have to write function or return.
+
+
+????????? Symbols ????????
