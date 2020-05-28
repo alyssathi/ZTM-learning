@@ -1,0 +1,55 @@
+**we are using our E5/E6 syntax
+
+FOR EACH: 
+here we want to multiply each of the numbers in the array by 2.
+
+    const array = [1, 2, 10, 30];
+    const newArray = array.forEach((num) => {
+            num *2;
+        });
+    console.log(newArray);
+
+We get back undefined... why? We are multiplying the numbers by 2 but we are not storing it. How would we go about that?
+
+    const array = [1, 2, 10, 30];
+
+    const double = []
+    const newArray = array.forEach((num) => {
+            double.push(num *2);
+        });
+    console.log(double);
+
+you have to store the values in another array, here we push the data into the array called 'double'
+
+
+//MAP, FILTER, REDUCE- these are things you will use in day to day web development. when using loops, one of these methods will be used.
+
+MAP - the way this works, you always have to return something. This is the difference between map and forEach. forEach just loops over something and just does whatever the function says. Map does what forEach cant, it loops over each number and returns a new array ( our mapArray), without having to push it. 
+
+    const mapArray = array.map((num) => {
+        return num*2
+    });
+
+A critical difference between map and forEach. Whenever you want to do a loop on something like an array, you want to use Map. With forEach, the operation may do nothing because all forEach cares about is to iterate (to go over one by one), over a collection of elements (here, 1, 2, 10, 30) and apply whatever operation we tell it to. Map has a restriction on the operation- it expects the operation to return an element. with forEach, you can have multiple lines of code doing all these crazy things and then get nothing back versus Map- you always have a return element. You can be sure that it stores the transformation of the original array. Basically, its much harder to get back values. 
+
+Remember last lecture on Deterministic Code? forEach increases the chances of side effects and will decrease functional purity. Another bonus is that you're never mutating the original array.
+
+
+FILTER: filter the array with a condition
+
+Here we are filtering the array to create another one with elements more than 5. 
+
+    const array = [1, 2, 10, 30];
+    const filterArray = array.filter(num => num>5);
+
+
+
+REDUCE: you can do both filter and map!
+accumulator is some thing where we can store the information that happens in the body of the function...
+
+    const array = [1, 2, 10, 30];
+    const reduceArray = array.reduce((accumulator, num) => {
+        return accumulator + num
+    }, 0);
+
+If your accumulator = 0, which here it is (look at the second parameter), then it will add each element to that value. So 1+2 =3, 3+10= 13, 13+30=43

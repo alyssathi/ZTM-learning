@@ -29,10 +29,10 @@ But the second() function needs to know what greet is right?
 
 What closure does, it says that the child scope always has access to the parent scope. 
 
-*** A function ran, the function executed, and it will never be executed again, but what it is going to remmeber that there are references to those variables so the child scope always has access to the parent scope. ***
+*** A function ran, the function executed, and it will never be executed again, but it is going to remember that there are references to those variables so the child scope always has access to the parent scope. ***
 
 
-CURRYING- the process of converting a fun that takes multiple arguements  into a function that tkes them one at a time.
+CURRYING- the process of converting a function that takes multiple arguements  into a function that takes them one at a time.
 
     const multiply = (a,b) => a * b;
 
