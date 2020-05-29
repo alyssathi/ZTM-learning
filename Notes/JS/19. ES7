@@ -1,0 +1,19 @@
+Two additions to ES7:
+
+.includes()
+something like:
+    'Hello'.includes('o');
+    //returns true
+
+can also use this in arrays:
+    const pets = ['cat', 'dog', 'bat'];
+    pets.includes('dog')
+    //true
+
+
+exponential operator
+
+const square = (x) => x**2;
+
+square(5);
+//return 25;

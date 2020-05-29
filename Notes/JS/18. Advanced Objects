@@ -76,3 +76,30 @@ ex. you have a multiplayer game and want to make a wizard class:
 //when we ask for a 'new' wizard for Wizard1 with two parameters of Shelly and Healer, and it goes up to the class of Wizard. It sees that Wizard wants to extend Player. It goes to the constructor in Wizard and sees the 'super' and it takes us up to the constructor of the PLayer class and it runs (this.name = name;this.type=type) but attaches "this" to the Wizard. We can use the introduce method with the Wizard now, but we can also use the Play function too!
 
     wizard1.play();
+
+
+//Just the code:
+
+    class Player {
+        constructor(name,type) {
+            this.name = name;
+            this.type = type;
+        }
+        introduce(){
+            console.log(`Hi, I am ${this.name}, I'm a ${this.type}`);
+        }
+    }
+
+    class Wizard extends Player {
+        constructor(name, type){
+            super(name, type)
+        }
+        play() {
+            console.log(`Look at me! I'm a ${this.type}`);
+        }
+    }
+
+    const wizard1 = new Wizard('Shelly', 'Healer');
+    const wizard2 = new Wizard('Sean', 'Dark Mage');
+
+    wizard1.play();
