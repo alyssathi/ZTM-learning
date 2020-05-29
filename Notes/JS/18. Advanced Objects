@@ -1,0 +1,78 @@
+REFERENCE TYPE
+var object1 = {value: 10};
+var object2 = object1;
+var object3 = {value: 10};
+
+object1 === object2; //true
+object1 === object3; //false
+
+Why is this? think of object1 as its own box and object twoo references this box to get its own information. But object3 is in its own box and references something comepletely different, even if it is the same information. 
+
+1, true, false, "strings", null, undefined- all of these are defined by JS, they are "primitive types". objects (and arrays(which are just a type of object)) are not defined by the programming language, these are created by the programmer.
+
+
+CONTEXT
+lets start with scope: if we create a function, those curly brackets tell us we created a new scope, its own universe. it is a local scope that you can't use on a global scale. 
+
+Context- tels you where you are within the object. What is the object environment that we are in?
+
+console.log(this);
+    'this' is a keyword that tells you where you are, in the main window, this ===window.
+
+examples:
+
+    function a(){
+        console.log(this);
+    }
+
+if you call it right away, you'll know that you are in the window... but, let's try to get out of window
+    const object4 = {
+        a: function()(
+            console.log(this);
+        )
+    }
+object4.a();
+
+you will get back object4 running 'a'
+
+Why is this important to us?
+1. we'll see it in other code bases so it's good to be familiar
+2. it's important when we get into instantiation.
+
+INSTANTIATION- when you make a copy of an object and reuse the code.
+ex. you have a multiplayer game and want to make a wizard class:
+
+//class WithACapitalLetter, says "this is something I want to copy"
+    class Player {
+        constructor(name,type) {
+            this.name = name;
+            this.type = type;
+        }
+        introduce(){
+            console.log(`Hi, I am ${this.name}, I'm a ${this.type}`);
+        }
+    }
+//constructor tells JS: everytime I make a copy of 'Player', the first thing that gets run is the constructor function and the constructor function is going to create 'this.name' and 'this.type' on the 'player' object. Now I can create anything I want, such as the method of 'introduce' above. Any 'Player' that is created, will have a name and a type and they will be able to introduce themselves. 
+//if you want to access these properties you'll have to use this.name, this.type or this.introduce
+//the good thing about this, is you can alway add on to your Player class now, say you want to create a wizard class:
+
+    class Wizard extends Player {
+        constructor(name, type){
+            super(name, type)
+        }
+        play() {
+            console.log(`Look at me! I'm a ${this.type}`);
+        }
+    }
+
+//'extends' is just a keyword. This says that the constructor accepts name and type, but the 'super' tells Wizard that we want the properties of Player, name and type, to be available to Wizard. THen you can further extend this wiht our 'play function'
+
+//so whats so good about this? Now instead of constantly creating Players and sayin they have the abilities of the Wizard... I can do this:
+
+    const wizard1 = new Wizard('Shelly', 'Healer');
+    const wizard2 = new Wizard('Sean', 'Dark Mage');
+
+//What is happening here?
+//when we ask for a 'new' wizard for Wizard1 with two parameters of Shelly and Healer, and it goes up to the class of Wizard. It sees that Wizard wants to extend Player. It goes to the constructor in Wizard and sees the 'super' and it takes us up to the constructor of the PLayer class and it runs (this.name = name;this.type=type) but attaches "this" to the Wizard. We can use the introduce method with the Wizard now, but we can also use the Play function too!
+
+    wizard1.play();
