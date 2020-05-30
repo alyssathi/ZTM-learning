@@ -1,0 +1,77 @@
+Pass by Reference vs Pass by Value
+
+Primitive vs Reference Types:
+
+Primitive: when you change one variable, it doesn't change the other.
+    var a = 5;
+    var b = a;
+    var b = 20;
+    //returns a = 5, b = 20
+
+Pass by Value
+primitive types are immutable- we can't change them
+when variables use these (strings, booleans, numbers...), this is called pass by value
+
+Pass by value simply means we copy the value and we create the value somewhere else in the CPU's memory.
+
+(All functions pass by value)
+
+
+
+
+Reference: basically when you use objects etc, if you change either of the variables that depend on the same object, both variables will change because it references the same memory.
+    var x = {name: 'John'};
+    var y = x;
+    y.name = 'David';
+    //both x.name and y.name = David
+
+Pass by Reference
+uses reference types.
+Why might this be good?
+    you can save memory by referencing one location in the memory...
+But it can also be bad- we might run into an issue where by mistake, someone else changes a property on the reference object. SO this is something we need to be careful of. 
+
+How to avoid this?
+arrays:
+    instead of this:
+        var c = [1,2,3,4,5];
+        var d = c;
+        d.push(123355647);
+    which will change the array for both c and d, you can do this:
+        var c = [1,2,3,4,5];
+        var d = [].concat(c);
+        d.push(123355647);
+    this will change only d and leave var c alone
+
+
+objects:
+    let obj = {a: 'a', b:'b', c: 'c'};
+    let clone = Object.assign({}, obj);
+
+    clone.c = 5;
+
+clone lets us change the object without changing the original. the curly brackets in the assign tells us the target to copy to and the source.
+
+another way to do it using the spread operator: 
+        let obj = {a: 'a', b:'b', c: 'c'};
+        let clone2 = {...obj};
+
+What if we have an object inside of an object?
+    let obj = {a: 'a', 
+            b:'b', 
+            c: {
+                deep:'try to copy me'
+                }
+            };
+    let clone = Object.assign({}, obj);
+    let clone2 = {...obj};
+    
+    clone.c = 5;
+
+    now if you change obj.c.deep = 'a new string';
+    ALL of the clones change because clones do a "shallow clone" only copying the first level.
+
+So how do we do a deep clone??
+by using JSON... more on that later...
+    let superClone = JSON.parse(JSON.stringify(obj));
+but this is not used too much because it can take a long time, just an idea of how to troubleshoot these issue.
