@@ -1,0 +1,66 @@
+String padding: good if you want specific line alignment
+    'turtle'.padStart(10);
+
+//returns '          turtle'
+
+    'turtle.padEnd(10);
+//returns 'turtle          '
+
+
+Trailing commas in function parameter lists and calls
+
+Basically putting a comma at the end of a parameter list.
+    const fun = (a,b,c,d,) => {
+        console.log(a)
+    }
+
+    fun(1,2,3,4,);
+    //returns 1 (your a value), because it is still valid JS
+
+So why is this important? Just syntactically cleaner since once you get to bigger parameters you might put your code like this:
+    const fun = (
+                a,
+                b,
+                c,
+                d,
+    )
+
+
+Object.values and Object.entries
+
+***here username0-2: keys and 'santa' etc. = values
+let obj = {
+    username0: 'Santa',
+    username1: 'Rudolf',
+    username2: 'Mr. Grinch'
+}
+
+because its not an array, you cant up map, filter or reduce.
+
+we used to use Object.keys(obj) to be able to treat it as an array with properties and values. The below code allows us to loop through the objects.
+
+    Object.keys(obj).forEach((key, index) => {
+        console.log(key, obj[key])
+    })
+
+Using entries and values make this a bit easier.
+
+    Object.values(obj).forEach(value => {
+        console.log(value);
+    })
+    //returns 'santa', 'rudolf', 'mr. grinch'
+
+    Object.entries(obj).forEach(value => {
+        console.log(value);
+    })
+    //returns the whole entry, key and value.
+
+Now we can use all the array functionalities (map, filter, reduce) on objects
+
+
+
+Real Life examples: How can we display our names (santa, rudolf, mr. grinch) with an ID number (0,1,2)
+
+Object.entries(obj).map(value => {
+    return value[1] + value[0].replace('username', '');
+})

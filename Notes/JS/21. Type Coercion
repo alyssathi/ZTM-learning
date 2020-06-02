@@ -1,0 +1,19 @@
+Type Coercion - all languages do this! These are things to be aware of and shouldn't see too often.
+
+when the operants are different types, one of them will be converted into an equivilent value.
+    ex. 
+        1 == '1'; JS will convert into -----> 1 == 1; 
+    this happens with the double-equal signs (==), it tells JS to compare the two values and if they have different types to try to coerce one into the same type. But we can compare the string to a number using a triple-equal sign (===). This tells JS to compare them explicitly.
+
+    So basically don't us double equal signs.
+
+You can also see these type coercions in if statements
+    if (1) {
+        console.log(5);
+    }
+    //will return 5 because JS coerces 1 to equal true.
+
+    if (0) {
+        console.log(5);
+    }
+    //undefined because JS sees 0 as false.
