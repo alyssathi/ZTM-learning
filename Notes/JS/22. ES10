@@ -1,0 +1,48 @@
+.flat()- a method we can use on arrays
+ex.
+    const array = [1,2,3,4,5]
+    array.flat()
+    returns the same thing...... but:
+    const array2 = [1,[2,3],[4,5]]
+    array2.flat();
+    //returns [1,2,3,4,5]
+
+    but you can also tell it how many time you want to flatten it.
+    const array3 = [1,[2,3,[4,5]]]
+    array3.flat();
+    //returns [1,2,3,[4,5]] but:
+    array3.flat(2);
+    //returns [1,2,3,4,5]
+
+you can also use a very high number if you don't want to count how many nested arrays there are. 
+- flat() also can clean up data by recognizing which strings are empty
+
+
+flatMap() - allows us to the flat and map function on an array
+    const zoo = [['monkey', 'gorilla'], 'turtle', 'crocodile', ['snake', 'lizard'], [[['lion']]], 'bear'];
+    zooChaos = zoo.flatMap(creature => creature + ', lion');
+so the flat allows us to flatten everything to a depth of 1, and map will loop over each item in the array and run your said function.
+
+
+
+const userEmail = '        johnsmith1@gmail.com'
+const userEmail2 = 'johnsmith2@gmail.com        '
+
+userEmail.trimStart()
+//returns email without the spaces at the beginning
+userEmail2.trimEnd()
+//return email without the spaces at the end
+
+
+
+fromEntries()- transforms a list of key value pairs into an object.
+
+ex. you have user profiles formatted in an array (the wrong way)
+    const userProfiles = [['commanderTom', 23], ['alienJon', 30], ['explorerAya', 18]]
+We want to convert into an object where each username is associated with an age.
+    Object.fromEntries(userProfiles)
+This converts our array into an object. This does the opposite of our .entries function from ES8
+
+
+
+update to 'try, catch, block'... you don't have to provide an error parameter (more in ansync js)
