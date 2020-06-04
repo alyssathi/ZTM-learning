@@ -1,0 +1,48 @@
+const basket = ['apples', 'oranges', 'grapes];
+
+//for loops:
+    for (let i = 0; i < basket.length; i++) {
+        console.log(basket[i]);
+    }
+
+//forEach loops:
+    basket.forEach(item => {
+        console.log(item);
+    })
+
+NEW ONES
+
+//FOR OF LOOP
+here our 'item' is just our parameter, it could be anything, 'of' is a keyword, and basket is our array. 
+    for (item of basket) {
+        console.log(item);
+    }
+
+We are ~iterating~ over this loop- meaning we are going one by one through this array and look at the item. We can iterate over "iterables" that include: arrays and strings
+
+//FOR IN LOOP
+***works with objects to see their properties
+
+    const detailedBasket = {
+        apples: 5,
+        oranges: 10,
+        grapes: 100
+    }
+
+    for (item in detailedBasket) {
+        console.log(item)
+    }
+    //returns 'apples, oranges, grapes'
+
+Here, we are not iterating, because iterating is something we do with array and strings. Here we are ~enumerating~. Objects are enumerable because it allows us to see the properties
+
+You could go a while without using a for-in loop, since we have thing like object.keys , object.values , and object.entries
+
+
+***You can use for-in loops on arrays, since arrays are really just like objects in the sense that the above array is really saying this:
+    basket = {
+        0: 'apples',
+        1: 'oranges',
+        2: 'grapes'
+    }
+but you cant use for-of loops on objects, because these are not iterable. (There are some caveats but 99% of the time, this is the rule)
