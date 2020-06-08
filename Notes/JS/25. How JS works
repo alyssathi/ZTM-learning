@@ -1,0 +1,26 @@
+What is a Program?
+It has to allocate memory and 'parse and execute' which means to read and run commands.
+The browser has a JS Engine that can read and translate the js file so the browser can take the commands. The JSE is comprised of two things: the memory heap and the call stack. The memory head is where the memory head is where teh memory is allocated and the call stack is where the code is read and executed. It tels you where you are in the program.
+    //to allocate memory you assign variables: 
+        const a = 1;
+    What's the issue here? Memory Leak.
+        We have finite amounts of memory available to us. Memory leaks happen when we have unused memory- say you aren't using const a. That's why we hear that global variables are bad if we don't clean up, we fill up the memory heap and eventually the browser will not be able to work.
+    //The Call Stack- it runs through our code and sees commands and adds them to be executed. When it is done, it removes it from the "to do" list.
+
+What does 'JS is a single threaded language that can be non blocking' mean?
+    -look above- Single-threaded: we only have one call stack, so we can only do one thing at a time. Call stack is first in last out- whatever's at the top gets run first and then goes down.
+    -Why was JS designed to be single-threaded when it might be more beneficial to be multi-threaded? 
+        Well it's easier- you don't have to deal with complicated scenarios that arise in multi-threaded environments.
+Synchronous programing- means that line one gets executed then line 2 then line 3....etc. THe latter cant start until the lines before it finishes. This isn't useful when you have line 2 being a very long command, so line 3 can't start without line 2 finishing.
+Sounds like we need something that is nonblocking- how do we do this? ASYNCHRONOUS programming.
+    Synchronous is good being it's reliable and predictable. Here's how to do this:
+    //the 2000 is 2000 ms, 0r 2 seconds
+        console.log('1');
+        setTimeout(() => {
+            console.log('2');
+        }, 2000);
+        console.log('3');
+
+JS Run-Time environment (part of the browser)
+- Web APIs, Callback Queues and Event Loop
+
