@@ -1,3 +1,4 @@
+Lecture 164
 What is a Program?
 It has to allocate memory and 'parse and execute' which means to read and run commands.
 The browser has a JS Engine that can read and translate the js file so the browser can take the commands. The JSE is comprised of two things: the memory heap and the call stack. The memory head is where the memory head is where teh memory is allocated and the call stack is where the code is read and executed. It tels you where you are in the program.
@@ -21,6 +22,6 @@ Sounds like we need something that is nonblocking- how do we do this? ASYNCHRONO
         }, 2000);
         console.log('3');
 
-JS Run-Time environment (part of the browser)
+JS Run-Time environment (part of the browser) (COME BACK TO THIS)
 - Web APIs, Callback Queues and Event Loop
 
