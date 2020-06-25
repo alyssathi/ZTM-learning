@@ -1,17 +1,18 @@
 * {
     margin: auto 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
-    background-color: papayawhip;
+    height: 100vh;
+    background: linear-gradient(rgb(234, 248, 245),rgb(112, 184, 178));
 }
 
 h1{
     text-align: center;
     margin: 1em;
     text-decoration: underline;
-    color: rgb(168, 109, 49);
+    color: rgb(103, 131, 128);
 }
 
 .noteMaker {
@@ -22,28 +23,29 @@ h1{
 input {
     font-size: large;
     margin-right: 1em;
-    transition: ease 1s;
-    border: rgb(168, 109, 49) solid 0.5px;
+    transition: ease .5s;
+    outline: none;
+    color: rgb(103, 131, 128);
 }
 
 input:hover {
     transform: scale(1.05);
-    border:  rgb(168, 109, 49) solid 2px;
+    border:  rgb(158, 158, 158) 2px solid;
 }
 
 button {
     font-size: large;
-    background-color: peachpuff;
-    border: peru 2px solid;
-    border-radius: 2em;
-    transition: 1s;
-    color: rgb(168, 109, 49);
-    margin-left: 1em;
+    background-color: rgb(224, 224, 224);
+    border: rgb(158, 158, 158) 2px solid;
+    border-radius: .5em;
+    transition: .5s;
+    color: rgb(103, 131, 128);
 }
 
 button:hover {
-    background-color: rgb(226, 192, 162);
+    background-color: rgb(158, 158, 158);
     transform: scale(1.1);
+    color: rgb(224, 224, 224);
 }
 
 .myList {
@@ -51,7 +53,20 @@ button:hover {
     display: flex;
     justify-content: center;
     font-size: large;
-    color: peru;
+    color: rgb(103, 131, 128);
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    padding: .5rem;
+    margin: .2rem;
+}
+
+li > button{
+    margin-left: .5rem;
 }
 
 li:hover {
@@ -61,5 +76,5 @@ li:hover {
 
 .done {
     text-decoration: line-through;
-    text-decoration-color: peru;
+    text-decoration-color: rgb(158, 158, 158);
 }

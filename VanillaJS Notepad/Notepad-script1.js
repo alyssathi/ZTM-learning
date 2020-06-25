@@ -2,6 +2,38 @@ var button = document.getElementById("addMe");
 var input = document.getElementById("userInput");
 var ul = document.querySelector("ul");
 
-//What do I want to do. I want to be able to click the add me button to add the input to the bottom of the list or use the enter button. I also want to be able to cross it out and toggle it by clicking the item and be able to delete things as needed. 
+const removeParent = (event) => {
+    event.target.parentNode.remove();
+}
 
-//add input to bottom of the list
+const createListItem = () => {
+    if (input.value.length>0) {
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(input.value));
+        ul.appendChild(li);
+        input.value = "";
+
+        let btn = document.createElement("button");
+        btn.appendChild(document.createTextNode("Delete"));
+        li.appendChild(btn);
+
+        btn.addEventListener("click", removeParent);
+    }
+}
+
+const addAfterKeypress = (e) => {
+    if (e.which === 13) {
+        createListItem();
+    }
+}
+
+// const listItem = document.getElementsByTagName("li");
+
+const toggleCrossOut = () => {
+    let target = event.target;
+    target.classList.toggle('done');
+}
+
+ul.addEventListener("click", toggleCrossOut);
+button.addEventListener("click", createListItem);
+input.addEventListener("keypress", addAfterKeypress);
